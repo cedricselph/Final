@@ -10,10 +10,25 @@ public class RateDomainModel implements Serializable {
 	private int MinCreditScore;
 	private double InterestRate;
 	
-	public RateDomainModel()
-	{
+	protected RateDomainModel(){
 		
 	}
+	public RateDomainModel(int RateID, int MinCreditScore, double InterestRate){
+	super();
+	
+	this.RateID=RateID;
+	this.MinCreditScore=MinCreditScore;
+	this.InterestRate=InterestRate;
+		
+	}
+	
+	public RateDomainModel(RateDomainModel rte){
+		super();
+		RateID=rte.getRateID();
+		MinCreditScore=rte.getMinCreditScore();
+		InterestRate=rte.getInterestRate();
+	}
+	
 	public int getRateID() {
 		return RateID;
 	}
